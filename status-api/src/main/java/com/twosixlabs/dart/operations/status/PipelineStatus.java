@@ -30,8 +30,8 @@ public class PipelineStatus implements Serializable {
     @JsonCreator( mode = JsonCreator.Mode.PROPERTIES )
     public PipelineStatus( @JsonProperty( "document_id" ) String documentId,
                            @JsonProperty( "application_id" ) String applicationId,
-                           @JsonProperty( "processor_type" ) ProcessorType processorType,
-                           @JsonProperty( "status" ) Status status,
+                           @JsonProperty( "processor_type" ) PipelineStatus.ProcessorType processorType,
+                           @JsonProperty( "status" ) PipelineStatus.Status status,
                            @JsonProperty( "scope" ) String scope,
                            @JsonProperty( "start_time" ) long start,
                            @JsonProperty( "end_time" ) long stop,

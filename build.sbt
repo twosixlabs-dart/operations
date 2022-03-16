@@ -32,9 +32,6 @@ lazy val client = ( project in file( "status-client" ) ).settings( libraryDepend
 //publishMavenStyle := true
 test in publish in ThisBuild := {}
 
-sources in ThisBuild in(Compile, doc) := Seq.empty // don't run scaladoc stuff because it generates useless exceptions
-publishArtifact in ThisBuild in(Compile, packageDoc) := false
-
 javacOptions in ThisBuild ++= Seq( "-source", "1.8", "-target", "1.8" )
 scalacOptions in ThisBuild += "-target:jvm-1.8"
 
