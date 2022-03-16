@@ -1,5 +1,5 @@
 # DART Operations
-A shared utility for writing internal debug and system status messages to a SQL database for metrics and analysis.
+A shared utility for writing internal debug and system status messages to a SQL database for metrics and analysis.  
 [![build and publish](https://github.com/twosixlabs-dart/operations/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/twosixlabs-dart/operations/actions/workflows/build-and-publish.yml)
 
 # Modules
