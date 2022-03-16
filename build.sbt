@@ -6,7 +6,7 @@ name := "operations"
 scalaVersion in ThisBuild := "2.12.7"
 
 resolvers in ThisBuild ++= Seq( "Maven Central" at "https://repo1.maven.org/maven2/",
-                                "JCenter" at "http://jcenter.bintray.com",
+                                "JCenter" at "https://jcenter.bintray.com",
                                 "Local Ivy Repository" at s"file://${System.getProperty( "user.home" )}/.ivy2/local/default" )
 
 crossScalaVersions in ThisBuild := Seq( "2.11.12", "2.12.7" )
@@ -29,7 +29,7 @@ lazy val client = ( project in file( "status-client" ) ).settings( libraryDepend
                                                                                   ExclusionRule( "org.apache.logging.log4j", "log4j-core" ) ) ).dependsOn( api )
 
 // publish configurations
-publishMavenStyle := true
+//publishMavenStyle := true
 test in publish in ThisBuild := {}
 
 sources in ThisBuild in(Compile, doc) := Seq.empty // don't run scaladoc stuff because it generates useless exceptions
@@ -37,3 +37,21 @@ publishArtifact in ThisBuild in(Compile, packageDoc) := false
 
 javacOptions in ThisBuild ++= Seq( "-source", "1.8", "-target", "1.8" )
 scalacOptions in ThisBuild += "-target:jvm-1.8"
+
+sonatypeProfileName := "com.twosixlabs"
+inThisBuild(List(
+    organization := organization.value,
+    homepage := Some(url("https://github.com/twosixlabs-dart/cdr4s")),
+    licenses := List("GNU-Affero-3.0" -> url("https://www.gnu.org/licenses/agpl-3.0.en.html")),
+    developers := List(
+        Developer(
+            "twosixlabs-dart",
+            "Two Six Technologies",
+            "",
+            url("https://github.com/twosixlabs-dart")
+            )
+        )
+    ))
+
+ThisBuild / sonatypeCredentialHost := "s01.oss.sonatype.org"
+ThisBuild / sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
