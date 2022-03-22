@@ -11,7 +11,7 @@ object Dependencies {
     val scalaMockVersion = "4.2.0"
     val scalaTestVersion = "3.0.5"
 
-    val dartCommonsVersion = "3.0.307"
+    val dartCommonsVersion = "3.0.30"
 
     val logging = Seq( "org.slf4j" % "slf4j-api" % slf4jVersion,
                        "ch.qos.logback" % "logback-classic" % logbackVersion )
